@@ -1,66 +1,32 @@
-## Foundry
-
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+# Foundry repro
 
 ## Usage
 
-### Build
-
-```shell
-$ forge build
+```
+cp .env.template .env
 ```
 
-### Test
+Fill out `.env` and run:
 
-```shell
-$ forge test
+```
+source .env
+forge script script/Counter.s.sol --rpc-url $ETH_RPC_URL --broadcast --ledger -vvvv
 ```
 
-### Format
+Where `ETH_RPC_URL` is recommended to be any Ethereum testnet or mainnet.
 
-```shell
-$ forge fmt
-```
+## Output
 
-### Gas Snapshots
+## Notes
 
-```shell
-$ forge snapshot
-```
+I'm able to replicate the stalling issue, given the repro linked in the comment: https://github.com/bgd-labs/v2-stable-debt-offboarding/blob/main/scripts/Deploy.s.sol#L7
 
-### Anvil
+Also able to replicate that on commit `60ec00296f00754bc21ed68fd05ab6b54b50e024` it does work.
 
-```shell
-$ anvil
-```
+A simple default repo Counter deploy however does work on the latest version of Forge.
 
-### Deploy
+Combination tested:
+- macOS (latest)
+- Ledger Nano S Plus (latest)
+- Both firmware versions 1.1.10 and 1.1.11 (latest), no changes
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
