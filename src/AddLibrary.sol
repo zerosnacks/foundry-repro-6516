@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.6.12;
+pragma solidity ^0.8.13;
 
 library AddLibrary {
     function add(uint256 a, uint256 b) public pure returns (uint256) {
