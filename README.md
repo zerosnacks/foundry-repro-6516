@@ -1,5 +1,7 @@
 # Foundry repro
 
+WORK IN PROGRESS, NOT YET ABLE TO REPRODUCE BUG
+
 ## Usage
 
 ```
