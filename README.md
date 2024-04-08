@@ -33,3 +33,14 @@ Combination tested:
 Appears to be a combination between program complexity (?), a regression of some kind.
 Next steps are replicating behavior across operating system.
 It also appears to be connected to the Ledger Nano S specifically as the Nano X does work (?)
+
+We do know that the connection is opened to the Ledger as no other connection is accepted
+
+```
+2024-04-08T18:50:16.303677Z ERROR coins_ledger::transports::native::hid: error=Error opening device. hidapi error: hid_error is not implemented yet. Hint: This usually means that the device is already in use by another transport instance.
+Error:
+Could not connect to Ledger device.
+Make sure it's connected and unlocked, with no other desktop wallet apps open.
+```
+
+We do know it is able to deploy a very simple program
