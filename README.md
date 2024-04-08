@@ -30,3 +30,6 @@ Combination tested:
 - Ledger Nano S Plus (latest)
 - Both firmware versions 1.1.10 and 1.1.11 (latest), no changes
 
+Appears to be a combination between program complexity (?), a regression of some kind.
+Next steps are replicating behavior across operating system.
+It also appears to be connected to the Ledger Nano S specifically as the Nano X does work (?)
